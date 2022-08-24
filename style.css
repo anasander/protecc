@@ -31,11 +31,21 @@ img {
 /* ESTRUTURA GERAL */
 .grid-base {
   display: grid;
-  grid-template-columns: minmax(200px, 250px) 3fr 300px;
+  grid-template-columns: 200px 3fr 250px;
   grid-template-areas:
     "header header header"
     "sidenav content ads"
     "footer footer footer";
+}
+
+@media (max-width: 1200px) {
+  .grid-base {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav ads ads"
+      "footer footer footer";
+  }
 }
 
 @media (max-width: 1000px) {
@@ -123,8 +133,7 @@ img {
 .sidenav {
   grid-area: sidenav;
   background-image: linear-gradient(to right, #9dffc4, #c6ffcf);
-  justify-content: center;
-  align-items: center;
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
 .sidenav img {
@@ -133,6 +142,7 @@ img {
   border: solid 4px #50edc7;
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
   width: 150px;
+  height: auto;
   margin: 40px auto;
   transition: 0.1s ease-out;
 }
@@ -197,6 +207,34 @@ img {
 .ads {
   grid-area: ads;
   background-image: linear-gradient(to right, #c6ffcf, #9dffc4);
+  box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ads img {
+  display: block;
+  border-radius: 20px;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
+  width: 200px;
+  height: auto;
+  margin: 40px auto;
+  transition: 0.1s ease-out;
+}
+
+.ads img:hover {
+  filter: drop-shadow(rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 1200px) {
+  .ads {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(#50edc7, #7ff5c4);
+    box-shadow: none;
+  }
+  .ad-content {
+    margin: 0 auto;
+    padding: 0px 10px;
+  }
 }
 
 /* FOOTER */
