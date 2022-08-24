@@ -241,4 +241,50 @@ img {
 .footer {
   grid-area: footer;
   background-image: linear-gradient(to bottom, #087382, #03556e);
+  font-size: 1rem;
+  color: #e7ffe3;
+}
+
+.footer div {
+  margin: 20px 200px 30px 200px;
+}
+
+.footer-titulo {
+  margin-bottom: 8px;
+}
+
+.footer span {
+  font-weight: 700;
+}
+
+.footer-final {
+  color: #bbbbbb;
+  margin: 0 200px 20px 200px;
+}
+
+@media (max-width: 1200px) {
+  .footer div {
+    margin: 20px 120px 30px 120px;
+  }
+  .footer-final {
+    margin: 0 120px 20px 120px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer div {
+    margin: 20px 60px 30px 60px;
+  }
+  .footer-final {
+    margin: 0 60px 20px 60px;
+  }
+}
+
+@media (max-width: 750px) {
+  .footer div {
+    margin: 20px 30px 20px 30px;
+  }
+  .footer-final {
+    margin: 0 30px 20px 30px;
+  }
 }
