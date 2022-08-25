@@ -136,12 +136,18 @@ img {
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
+.sidenav ul {
+  display: block;
+  margin: 40px auto;
+  width: 120px;
+}
+
 .sidenav img {
   display: block;
   border-radius: 20px;
   border: solid 4px #50edc7;
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
-  width: 150px;
+  width: 120px;
   height: auto;
   margin: 40px auto;
   transition: 0.1s ease-out;
@@ -171,19 +177,12 @@ img {
     overflow-x: auto;
     position: relative;
   }
-  .sidenav::after {
-    content: "➜";
-    position: absolute;
-    top: 5px;
-    right: 30px;
-    color: rgba(0, 0, 0, 0.2);
-    animation: seta 0.5s ease-in 0s infinite alternate;
-  }
   .sidenav img {
     min-width: 100px;
     margin: 30px auto 20px auto;
   }
   .sidenav ul {
+    margin: 0px;
     display: flex;
   }
   .sidenav ul li {
@@ -198,9 +197,46 @@ img {
   }
 }
 
+@media (max-width: 920px) {
+  .sidenav::after {
+    content: "➜";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.2);
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+}
+
 /* CONTENT */
 .content {
   grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #444444;
+}
+
+.content-titulo h1 {
+  font-weight: 700;
+  line-height: 65px;
+  font-size: 3.75rem;
+  color: #087382;
+  grid-column: 1;
+}
+
+.content-titulo p {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #0e8a92;
+  grid-column: 1;
+}
+
+.content-extra {
+  grid-column: 2;
 }
 
 /* ADS */
@@ -210,18 +246,23 @@ img {
   box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
-.ads img {
+.ad-content {
   display: block;
-  border-radius: 20px;
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
-  width: 200px;
-  height: auto;
   margin: 40px auto;
+  width: 180px;
+}
+
+.ads img {
+  border-radius: 20px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  height: auto;
+  margin: 0 auto;
   transition: 0.1s ease-out;
 }
 
 .ads img:hover {
-  filter: drop-shadow(rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(rgba(255, 255, 255, 0.1));
 }
 
 @media (max-width: 1200px) {
@@ -230,10 +271,20 @@ img {
     justify-content: center;
     background-image: linear-gradient(#50edc7, #7ff5c4);
     box-shadow: none;
+    gap: 20px;
   }
   .ad-content {
+    margin: 20px;
+    min-width: 150px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ads {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
-    padding: 0px 10px;
   }
 }
 
